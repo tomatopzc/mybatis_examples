@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: mybatis_examples
+  datasource:
+    url: 'jdbc:mysql://114.116.213.241:3306/2018214216?&serverTimezone=Asia/Shanghai'
+    username: 2018214216
+    password: 2018214216
+    driver-class-name: com.mysql.cj.jdbc.Driver
+logging:
+  level:
+    root: warn
+    com:
+      example: debug
+  pattern:
+    console: '%-5level %C.%M[%line] - %msg%n'
+server:
+  port: 8080
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+
