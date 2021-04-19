@@ -1,4 +1,4 @@
-package com.example.mybatis_examples.example02;
+package com.example.mybatis_examples.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.example.mybatis_examples.entity.Address;
@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 @Mapper
-public interface Mapper02 extends BaseMapper<Address> {
+public interface AddressMapper extends BaseMapper<Address> {
 }

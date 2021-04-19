@@ -1,18 +1,14 @@
 package com.example.mybatis_examples;
 
-import com.example.mybatis_examples.entity.Address;
-import com.example.mybatis_examples.entity.User;
-import com.example.mybatis_examples.example01.Mapper01;
 import com.example.mybatis_examples.example02.Mapper02;
-import com.mysql.cj.log.Log;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
-import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.transaction.annotation.Transactional;
 import lombok.extern.slf4j.Slf4j;
 
+import java.time.LocalDateTime;
 
 
 /*
@@ -50,7 +46,7 @@ class ApplicationTests {
 //        address.setUserId(1L);
 //        mapper01.insert(address);  //调用接口中的方法
 //    }
-//
+
 //    @Test
 //    public void list_test(){
 //        for (User user : mapper01.list()) {
@@ -69,9 +65,21 @@ class ApplicationTests {
         User user = new User();
         user.setName("SUN");
         user.setCompany("amazon");//无需手动设置主键值，默认雪花算法生成
-        mapper02.insert(user);// UserMapper02接口中没声明方法，继承BaseMapper
+//        mapper02.insert(user);// UserMapper02接口中没声明方法，继承BaseMapper
         // 接口，从而实现CURD操作
     }
+    @Test
+    public void update_test2(){
+        Address address = new Address();
+        address.setId(1L);
+        address.setCreateTime(LocalDateTime.now());
+        address.setDetail("111");
+        mapper02.updateById(address);
+//        LocalDateTime localDateTime =
+//                new LocalDateTime(LocalDate.of(2000, 10, 10),
+//                        LocalTime.MAX);
+//        System.out.println();
 
+    }
 
 }

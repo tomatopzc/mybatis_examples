@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!-- 指定代码自动生成的模式。默认为MyBatis3DynamicSql，MyBatis3  -->
+    <context id="context" targetRuntime="MyBatis3">
+        <plugin type="com.github.bwhyman.mybatisplusgenerator.MyBatisPlusPluginAdapter">
+            <!-- Optional. 指定乐观锁字段名称，添加@Version -->
+            <property name="version" value="version"/>
+            <!-- 指定更新忽略字段名称，由数据库生成 -->
+            <!-- Optional. @TableField(updateStrategy = FieldStrategy.NEVER)  -->
+            <property name="never" value="update_time, create_time" />
+            <!-- Optional. serializable 指定是否实现序列化 -->
+            <property name="serializable" value="false"/>
+            <!-- Optional. 指定是否添加lombok @Builder-->
+            <property name="builder" value="true"/>
+        </plugin>
+        <commentGenerator type="com.github.bwhyman.mybatisplusgenerator.MyBatisPlusCommentGenerator" />
+        <jdbcConnection
+                driverClass="com.mysql.cj.jdbc.Driver"
+                connectionURL="jdbc:mysql://114.116.213.241:3306/2018214216?serverTimezone=Asia/Shanghai"
+                userId="2018214216" password="2018214216">
+            <!-- 禁止读取数据库默认数据表 -->
+            <property name="nullCatalogMeansCurrent" value="true" />
+        </jdbcConnection>
+        <javaTypeResolver>
+            <!-- 使用java8日期时间接口 -->
+            <property name="useJSR310Types" value="true" />
+        </javaTypeResolver>
+        <!-- 声明生成的model包位置 -->
+        <javaModelGenerator
+                targetPackage="com.example.mybatis_examples.entity"
+                targetProject="src/main/java" />
+        <!-- 基于MyBatis3DynamicSql此处无效 -->
+        <!-- 声明生成的mapper包位置 -->
+        <javaClientGenerator
+                type="ANNOTATEDMAPPER"
+                targetPackage="com.example.mybatis_examples.mapper"
+                targetProject="src/main/java" />
+
+        <!-- 指定数据库的全部数据表 -->
+        <table tableName="%" />
+
+    </context>
+</generatorConfiguration>
+
