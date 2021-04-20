@@ -35,7 +35,7 @@
         <!-- 声明生成的mapper包位置 -->
         <javaClientGenerator
                 type="ANNOTATEDMAPPER"
-                targetPackage="com.example.mybatis_examples.mapper"
+                targetPackage="com.example.mybatis_examples.example03"
                 targetProject="src/main/java" />
 
         <!-- 指定数据库的全部数据表 -->

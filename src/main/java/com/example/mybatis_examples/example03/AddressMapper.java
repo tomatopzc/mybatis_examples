@@ -1,4 +1,4 @@
-package com.example.mybatis_examples.mapper;
+package com.example.mybatis_examples.example03;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.example.mybatis_examples.entity.Address;
